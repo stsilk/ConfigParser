@@ -1,0 +1,10 @@
+build:
+  stage: build
+  script:
+    - docker build -t configparser-user-api .
+
+
+deploy:
+  stage: deploy
+  script:
+    - docker stack deploy -c docker-compose.yml configparser
